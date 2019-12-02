@@ -3,6 +3,8 @@ import './App.css';
 import HelloFunc from './components/Hello/HelloFunc';
 import HelloClass from './components/Hello/HelloClass';
 import CountdownClass from './components/Countdown/CountdownClass';
+import TodoList from './components/TodoList/TodoList';
+import CountdownFunc from './components/Countdown/CountdownFunc';
 
 function App() {
   const [isVisible, setIsVisible] = useState(true)
@@ -14,10 +16,18 @@ function App() {
       <HelloClass nameUser="Idan" />
 
       {
-        isVisible && <CountdownClass start={5} destroyCb={setIsVisible} />
+        /*isVisible && <CountdownClass start={5} destroyCb={setIsVisible} />*/
+      }
+
+      {
+        isVisible && <CountdownFunc start={3} destroyCb={setIsVisible} />
       }
       
+      
       {/* <CountdownClass start={3} /> */}
+
+
+      {/* <TodoList /> */}
     </div>
   );
 }
