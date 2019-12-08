@@ -41,7 +41,19 @@
   - PureComponents
   - Closure
 
+- Forms
+  - Controlled / Uncontrolled forms
+  - ref
+  - HOC
+  - render props
+  - custom hooks
+  - Formik
+
+- Redux
+  
+
 
 ### Video Lectures
 
 - https://www.youtube.com/playlist?list=PLnHa2cF4cNDtfkYKO6v069GUPYrJtijwc
+- rxjs: https://www.youtube.com/watch?v=rLPW1VowY1E

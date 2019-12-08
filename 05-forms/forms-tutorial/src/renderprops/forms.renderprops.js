@@ -1,5 +1,5 @@
 /**
- * <SuperFormRenderProps> {() => how the son should look}  </SuperFormRenderProps>
+ * <SuperFormRenderProps render={() => ...}> {() => how the son should look}  </SuperFormRenderProps>
  */
 
 import React from 'react';
