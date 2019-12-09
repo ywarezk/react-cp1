@@ -68,6 +68,7 @@ module.exports = function(config) {
     concurrency: Infinity,
 
     webpack: {
+      mode: 'development',
       module: {
         rules: [
           {
@@ -77,7 +78,11 @@ module.exports = function(config) {
           },
           {
             test: /\.css$/,
-            use: 'style-loader!css-loader'
+            loader: 'style-loader!css-loader'
+          },
+          {
+            test: /\.(png|svg|gif|jpeg|jpg)$/,
+            use: 'file-loader'
           }
         ]
       }
