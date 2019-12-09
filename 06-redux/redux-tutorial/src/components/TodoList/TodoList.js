@@ -7,26 +7,32 @@
 
  import React, {useEffect} from 'react';
  import { connect } from 'react-redux';
- import {setIsLoading, setTasks} from '../../redux/actions/todo.actions';
+ import {fetchTasks} from '../../redux/actions/todo.actions';
 
- const TodoList = ({todoTasks, setIsLoading, setTasks}) => {
+ const TodoList = ({todoTasks, fetchTasks}) => {
 
     useEffect(() => {
-        setIsLoading(true);
-        fetch('https://nztodo.herokuapp.com/api/task/?format=json')
-            .then((response) => response.json())
-            .then((tasks) => {
-                setIsLoading(false);
-                setTasks(tasks);
-            })
+
+        fetchTasks()
+
+        // setIsLoading(true);
+        // fetch('https://nztodo.herokuapp.com/api/task/?format=json')
+        //     .then((response) => response.json())
+        //     .then((tasks) => {
+        //         setIsLoading(false);
+        //         setTasks(tasks);
+        //     })
     }, []);
 
     return (
-        <ul>
-            {
-                todoTasks.map((singleTask) => <li key={singleTask.id}>{singleTask.title}</li>)
-            }
-        </ul>
+        <>
+            <h1>we have {todoTasks.length} items</h1>
+            <ul>
+                {
+                    todoTasks.map((singleTask) => <li key={singleTask.id}>{singleTask.title}</li>)
+                }
+            </ul>
+        </>
     )
 
  }
@@ -38,7 +44,8 @@
          }
      },
      {
-        setIsLoading: setIsLoading,
-        setTasks
+        // setIsLoading: setIsLoading,
+        // setTasks
+        fetchTasks
      }
  )(TodoList);

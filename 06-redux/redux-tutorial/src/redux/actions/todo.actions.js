@@ -15,3 +15,13 @@ export function setIsLoading(isLoading) {
         payload: isLoading
     }
 }
+
+export function fetchTasks() {
+    return async (dispatch) => {
+        dispatch(setIsLoading(true));
+        const response = await fetch('https://nztodo.herokuapp.com/api/task/?format=json');
+        const tasks = await response.json();
+        dispatch(setIsLoading(false));
+        dispatch(setTasks(tasks));
+    }
+}
