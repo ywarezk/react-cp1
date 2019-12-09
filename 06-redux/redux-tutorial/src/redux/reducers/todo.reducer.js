@@ -2,7 +2,7 @@ import * as Actions from '../actions/todo.actions';
 
 // 1 - combineReducers - divide the state
 // 2 - No derived state 
-// 3 - Serializable - {hello: 'world'}, {hello: () => 'world'}
+// 3 - Serializable - {hello: 'world'}, {hello: () => 'world'} ? do we need to load the state from external source
 // 4 - Normalize
 // 5 - consider object instead of array
 
